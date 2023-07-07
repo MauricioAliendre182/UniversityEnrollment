@@ -60,7 +60,7 @@ To get the password it is neccesary to allow less secure app access, for that, y
 ### Second Step: Copy the repository
 
 ```bash
-git clone https://github.com/MauricioAliendre182/Flask-project.git
+git clone https://github.com/MauricioAliendre182/UniversityEnrollment.git
 ```
 ```bash
 cd UniversityEnrollment/UniversityManagement
