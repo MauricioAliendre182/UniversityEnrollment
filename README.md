@@ -1,6 +1,13 @@
 # University Enrollment Project
 ## V 1.0
 
+## Features and Tools
+- Windows x64
+- Django
+- PostgreSQL
+- Docker and docker-compose
+- Postman
+
 ## Description
 This is a Django project to create a page to enroll students to different subjects.
 
@@ -37,13 +44,6 @@ To configure the SMTP server you will need a gmail account, you need to annotate
 ![Django6](https://github.com/RodrigoValda/TestTitanWordpress/assets/86843637/04f830d8-f00f-4203-8591-81bd9047182d)
 
 To get the password it is neccesary to allow less secure app access, for that, you can go to [app password account](https://myaccount.google.com/u/0/apppasswords) and configure a new app password, you can use this [video](https://www.youtube.com/watch?v=Y_u5KIeXiVI) as guidance 
-
-## Features and Tools
-- Windows x64
-- Django
-- PostgreSQL
-- Docker and docker-compose
-- Postman
 
 ## Installation
 
