@@ -1,0 +1,40 @@
+version: "4.16.3"
+   
+services:
+  db:
+    image: postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    expose:
+      - 5432
+    environment:
+      - POSTGRES_DB=academic
+      - POSTGRES_USER=root
+      - POSTGRES_HOST=0.0.0.0
+      - POSTGRES_PASSWORD=R2D2-333
+  app:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    # command: python manage.py migrate && python manage.py runserver 0.0.0.0:8000
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    environment:
+      - POSTGRES_NAME=academic
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=R2D2-333
+    depends_on:
+      - db
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "admin@admin.com"
+      PGADMIN_DEFAULT_PASSWORD: "admin"
+    ports:
+      - "80:80"
+    depends_on:
+      - db

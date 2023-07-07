@@ -1,0 +1,129 @@
+body {
+    background: #59abe3;
+    margin: 0;
+  }
+  h1 {
+    width: 100%;
+    color: black;
+    display: flex; /* Added */
+    justify-content: center; /* Added */
+    align-items: center; /* Added */
+  }
+  .form {
+    width: 1000px;
+    height: 1000px;
+    background: #e6e6e6;
+    border-radius: 8px;
+    box-shadow: 0 0 40px -10px #000;
+    margin: calc(50vh - 220px) auto;
+    padding: 20px 30px;
+    max-width: calc(100vw - 40px);
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    position: relative;
+  }
+  h2 {
+    margin: 10px 0;
+    padding-bottom: 10px;
+    width: 100%;
+    color: #78788c;
+    border-bottom: 3px solid #78788c;
+  }
+  input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    background: none;
+    outline: none;
+    resize: none;
+    border: 0;
+    font-family: "Montserrat", sans-serif;
+    transition: all 0.3s;
+    border-bottom: 2px solid #bebed2;
+  }
+  input:focus {
+    border-bottom: 2px solid #78788c;
+  }
+  p:before {
+    content: attr(type);
+    display: block;
+    margin: 28px 0 0;
+    font-size: 14px;
+    color: #5a5a5a;
+  }
+  button {
+    float: right;
+    padding: 8px 12px;
+    margin: 8px 0 0;
+    font-family: "Montserrat", sans-serif;
+    border: 2px solid #78788c;
+    background: 0;
+    color: #5a5a6e;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  button:hover {
+    background: #78788c;
+    color: #fff;
+  }
+
+  p select {
+    font-family: Arial;
+    background-color: rgb(30, 221, 255);
+    width: 100%;
+    font-size: large;
+  }
+
+  p input[type="checkbox"] {
+    appearance: none;
+    border-radius: 30px;
+    height: 45px;
+    width: 100px;
+    margin: 10px;
+    background-color: rgba(10, 249, 169, 0.784);
+    outline: none;
+    transition: background-color 0.3s;
+    &:checked {
+      background-color: lighten(rgb(24, 241, 64), 10%);
+      transition: background-color 0.3s;
+    }
+    &::before {
+      display: flex; /* Added */
+      justify-content: center; /* Added */
+      align-items: center; /* Added */
+      position: relative;
+      height: 30px;
+      width: 30px;
+      border-radius: 30px;
+      margin: 7px;
+      background-color: rgb(224, 70, 85);
+      content: "NO";
+      transition: left 0.5s;
+    }
+    &:checked::before {
+      background-color: rgb(68, 218, 26);
+      margin: 7px;
+      left: 55px;
+      content: "YES";
+      align-content: center;
+      align-items: center;
+      transition: left 0.5s;
+    }
+}
+    
+  /* div {
+    content: "Hi";
+    position: absolute;
+    bottom: -15px;
+    right: -20px;
+    background: #50505a;
+    color: #fff;
+    width: 320px;
+    padding: 16px 4px 16px 0;
+    border-radius: 6px;
+    font-size: 13px;
+    box-shadow: 10px 10px 40px -14px #000;
+  }
+  span {
+    margin: 0 5px 0 15px;
+  } */

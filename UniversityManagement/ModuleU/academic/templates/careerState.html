@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block link %}<link rel="stylesheet" href="{% static 'style/career.css' %}">{% endblock link %}
+{% block title %}Create a Career{% endblock title %}
+
+{% block content %}
+    {% if message %}
+        <h1>{{ message }}</h1>
+    {% endif %}
+{% endblock content %}

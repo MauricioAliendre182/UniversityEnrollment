@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block link %}<link rel="stylesheet" href="{% static 'style/contact.css' %}">{% endblock link %}
+{% block title %}Contact{% endblock title %}
+
+{% block content %}
+    <form class="my-form" action="{% url 'academic:contact' %}" method="POST">
+        {% csrf_token %}
+        <fieldset>
+            {% if error_message %}
+                <p><strong>{{ error_message }}</strong></p>
+            {% endif %}
+            <legend> <h1>Registration Form</h1></legend>
+            <div class="form-group">
+                <label for="name">Subject:</label>
+                <input type="text" id="subject" name="subjectTxt" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="emailTxt" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="messageTxt" required></textarea>
+            </div>
+            
+            <div class="form-group">
+                <input type="submit" value="Submit">
+            </div>
+        </fieldset>
+    </form>
+
+{% endblock content %}

@@ -1,0 +1,62 @@
+{% load bootstrap4 %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    {% block link %}{% endblock link %}
+    <title>{% block title %}{% endblock title %}</title>
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">University Page</a>
+        </div>
+        {% if user.is_authenticated %}
+        <ul class="nav navbar-nav">
+          
+          <li class="active">
+            <a class="nav-link" href="{% url 'academic:home' %}">Welcome, {{user.username}}</a>
+          </li>
+          
+          <li class="active">
+            <a class="nav-link" href="{% url 'academic:student-create' %}">Student</a>
+          </li>
+
+          <li class="active">
+            <a class="nav-link" href="{% url 'academic:course-create' %}">Course</a>
+          </li>
+
+          <li class="active">
+            <a class="nav-link" href="{% url 'academic:career-create' %}">Career</a>
+          </li>
+
+          <li class="active">
+            <a class="nav-link" href="{% url 'academic:enrollment-create' %}">Enrollment</a>
+          </li>
+
+          <li class="active">
+            <a class="nav-link" href="{% url 'academic:contact' %}">Contact</a>
+          </li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="{% url 'academic:logout' %}"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>
+        </ul>
+        {% else %}
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="{% url 'academic:register' %}"><span class="glyphicon glyphicon-user"></span> Register</a></li>
+          <li><a href="{% url 'academic:login' %}"><span class="glyphicon glyphicon-log-in"></span> Log in</a></li>
+        </ul>
+        {% endif %}
+      </div>
+    </nav>
+    {% block content %}
+    {% endblock content %}
+</body>
+</html>
