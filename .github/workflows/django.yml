@@ -31,4 +31,4 @@ jobs:
     - name: Generate coverage report
       run: |
         coverage run UniversityManagement/manage.py test
-        coverage xm
+        coverage xml
