@@ -96,9 +96,9 @@ WSGI_APPLICATION = 'UniversityManagement.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ.get('POSTGRES_NAME'),
-        'USER': os.environ.get('POSTGRES_USER'),
-        'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
+        'NAME': 'academic',
+        'USER': 'root',
+        'PASSWORD': 'R2D2-333',
         'HOST': 'db',
         'PORT': '5432',
     }

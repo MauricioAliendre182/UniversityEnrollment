@@ -16,7 +16,7 @@ urlpatterns = [
     path('enrollment/', EnrollmentCreateView.as_view(), name='enrollment-create'),
     path('register/', register_request, name='register'),
     path('login/', login_request, name='login'),
-    path("logout", logout_request, name= "logout"),
+    path("logout/", logout_request, name= "logout"),
 
     path('api/v1/token/', jwt_views.TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/v1/token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
